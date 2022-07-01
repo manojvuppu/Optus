@@ -1,0 +1,53 @@
+.orb-accordion mat-expansion-panel {
+  margin-top: 4px;
+  margin-bottom: 16px;
+}
+
+.orb-accordion .mat-expansion-panel-header {
+  // height: 48px !important;
+  height: 109px !important;
+  // background-color: #f2f2f2 !important;
+}
+
+.orb-accordion .mat-expansion-panel-header:hover {
+  opacity: 0.8 !important;
+}
+
+.orb-accordion .mat-expansion-panel-header.mat-expanded,
+.orb-accordion .mat-expansion-panel-header.checked {
+  //  background-color: #006280 !important;
+  color: #fff !important;
+  height: 48px !important;
+}
+
+.orb-accordion .mat-expansion-panel-header-title,
+.orb-accordion .mat-expansion-panel-header-description,
+.orb-accordion .mat-expansion-indicator::after {
+  color: #0f0f0f;
+}
+
+.orb-accordion .mat-expansion-indicator {
+  display: none;
+}
+
+.orb-accordion .mat-expansion-panel-header-description {
+  flex-basis: 0;
+}
+
+.orb-accordion .mat-expansion-panel-header-description {
+  justify-content: end;
+  align-items: center;
+}
+.custom-border{
+  background: #FFFFFF 0% 0% no-repeat padding-box;
+  border: 2px solid #006280;
+  border-radius: 10px;
+  padding: 1.5em;
+}
+
+.orb-accordion .mat-expansion-panel-body {
+  background: #FAFAFA 0% 0% no-repeat padding-box;
+}
+.optus-primary{
+  color: #006280;
+}

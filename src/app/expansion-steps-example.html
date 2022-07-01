@@ -1,0 +1,69 @@
+<orb-accordion #orbAccordion [panels]="panels" *ngIf="!isShowBusinessInfo" (change)="onChangePanel($event)">
+  <!-- Basic Info -->
+  <orb-accordion-panel tmplName="basicInfo">
+    <div class="container">
+      <div class="row mt-4">
+        <mat-radio-group class="addOn-radio-group" (change)="selectAddOn($event)" [(ngModel)]="selectedAddOn">
+        <mat-radio-button class="addOn-radio-button" *ngFor="let addOn of addOns" [value]="addOn">
+          {{addOn.title}} <br>
+          {{addOn.desc}}
+        </mat-radio-button>
+      </mat-radio-group>
+      </div>
+
+      <div class="row mt-2">
+        <div class="col-12 text-right">
+          <button mat-button orb-link-button class="pl-4 pr-4" (click)="onCancel()">{{'Cancel'}}</button>
+          <button mat-button orb-normal-button class="pl-5 pr-5" (click)="onSave()">{{'Save'}}</button>
+        </div>
+      </div>
+    </div>
+  </orb-accordion-panel>
+
+
+  <!-- Email & Terms -->
+  <orb-accordion-panel tmplName="emailTerms">
+    <div class="container">
+      
+
+      <div class="row mt-4">
+        <div class="col-12 font-weight-bold">
+          Legal Terms
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-12">
+          Enter specific terms for your customers , e.g., “Payment is due within 21 days of the issue.”
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-12">
+          <mat-form-field appearance="outline" class="w-100">
+            <textarea matInput rows="9"></textarea>
+          </mat-form-field>
+        </div>
+      </div>
+
+      <div class="row mt-2">
+        <div class="col-12 text-right">
+          <button mat-button orb-link-button class="pl-4 pr-4" (click)="onCancel()">{{'Cancel'}}</button>
+          <button mat-button orb-outline-button class="pl-5 pr-5" (click)="onSkip()">{{'Skip'}}</button>
+          <button mat-button orb-normal-button class="pl-5 pr-5" (click)="onSave()">{{'Save'}}</button>
+        </div>
+      </div>
+    </div>
+  </orb-accordion-panel>
+
+  <!-- price -->
+  <orb-accordion-panel tmplName="price">
+    <!-- <orb-quote-price-list [mode]="'EDIT'"></orb-quote-price-list> -->
+    <hr>
+    <div class="row mt-2">
+      <div class="col-12 text-right">
+        <button mat-button orb-link-button class="pl-4 pr-4" (click)="onCancel()">{{'Cancel'}}</button>
+        <button mat-button orb-outline-button class="pl-5 pr-5" (click)="onSkip()">{{'Skip'}}</button>
+        <button mat-button orb-normal-button class="pl-5 pr-5" (click)="onSave()">{{'Save'}}</button>
+      </div>
+    </div>
+  </orb-accordion-panel>
+</orb-accordion>
