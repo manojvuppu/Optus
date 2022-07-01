@@ -5,7 +5,7 @@ import {
   Output,
   ViewChild,
 } from '@angular/core';
-import { OrbPanel } from './orb-accordion/orb-accordion-model';
+import { addOnTypes, OrbPanel } from './orb-accordion/orb-accordion-model';
 import { OrbAccordionComponent } from './orb-accordion/orb-accordion.component';
 
 /**
@@ -49,29 +49,8 @@ export class ExpansionStepsExample {
   ];
   pricePanel = this.panels.find((panel) => panel.name === 'Price');
 
-  selectedAddOn;
-  addOns: object[] = [
-    {
-      title: 'Jabra Evolve 1 - Link380a UC Stereo Black',
-      desc: 'Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam.',
-    },
-    {
-      title: 'Jabra Evolve 2 - Link380a UC Stereo Black',
-      desc: 'Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam.',
-    },
-    {
-      title: 'Jabra Evolve 3 - Link380a UC Stereo Black',
-      desc: 'Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam.',
-    },
-    {
-      title: 'Jabra Evolve 4 - Link380a UC Stereo Black',
-      desc: 'Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam.',
-    },
-    {
-      title: 'Jabra Evolve 5 - Link380a UC Stereo Black',
-      desc: 'Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam.',
-    },
-  ];
+  selectedAddO:string;
+  addOns: object[] = addOnTypes;
 
   onSave() {
     if (this.pricePanel && this.pricePanel.isExpanded) {
@@ -86,7 +65,7 @@ export class ExpansionStepsExample {
     this.changePanel.emit(panel);
   }
 
-  selectAddOn(event) {
+  selectAddOn(event:any) {
     console.log('chnaged', event && event.value);
   }
 }

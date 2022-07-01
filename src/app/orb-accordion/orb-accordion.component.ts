@@ -83,7 +83,7 @@ export class OrbAccordionComponent implements OnInit, AfterViewInit {
 
   onClosed(panel: OrbPanel) {
     console.log('panel closed');
-    // this.selectedPanel.isExpanded = false;
+     this.selectedPanel.isExpanded = false;
   }
 
   next() {
